@@ -188,3 +188,17 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.error {
+  border-color: red;
+}
+
+#loginpng { 
+  width:35%;
+  height:35%;
+  margin-left: 32%;
+  margin-top: 1%;
+}
+#cerrar-sesion{
+  display: none;
+}
