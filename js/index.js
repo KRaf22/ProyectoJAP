@@ -12,19 +12,5 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-    let correo=sessionStorage.getItem('email');
-
-    if(correo===null){
-
-        alert('Debe iniciar sesión');
-        location.href='login.html'
-    } else {
-        document.getElementById('cerrar-sesion').style.display="block";
-    }
-    document.getElementById('cerrar-sesion').addEventListener('click', ()=> {
-        alert('Cierro sesión');
-        sessionStorage.clear();
-        location.href="login.html";
-
-    })
+    
 });

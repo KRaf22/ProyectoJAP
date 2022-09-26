@@ -29,6 +29,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
+            <li class="d-flex nav-item" id="despegable">
+              
+            </li>
           </li>
           <li class="nav-item">
           </li>
@@ -37,11 +40,54 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div id="contenedor" class="container">
+      <h2 id="nombreProducto"></h1> <br>
+      <hr>
+      <h5><strong>Precio</strong></h5>
+      <p id="precio"></p>
+      <h5><strong>Descripción</strong></h5>
+      <p id="descripcion"></p>
+      <h5><strong>Categoria</strong></h5>
+      <p id="categoria"></p>
+      <h5><strong>Cantidad de vendidos</strong></h5>
+      <p id="cantidadVendidos"></p>
+      <h5><strong>Imágenes ilustrativas</strong></h5>
+      <div id="carrusel">
+
       </div>
+      <br>
+      <h4>Comentarios:</h4>
+
+      <div class="border rounded-3 cont">
+        <ul class="list-group" id="listaComentarios">
+
+        </ul>
+      </div>
+      <h4 id="comentar">Comentar</h4>
+      <div class="form-group">
+      <label for="comentario">Tu opinión: <br><textarea class="form control" name="comentario" id="comentario" rows="3"></textarea></label>
+      </div>
+      <label for="puntaje">Tu puntuación: <br>
+      <select  id="puntaje" name="select">
+        <option value="value1">1</option>
+        <option value="value2">2</option>
+        <option value="value3">3</option>
+        <option value="value3">4</option>
+        <option value="value3">5</option>
+      </select>
+    </label>
+    <br>
+
+    <button type="button" class="btn btn-primary my-3" id="enviarComentario">Enviar</button>
+    <hr>
+
+    <h4>Productos relacionados:<h4>
+    <div class="row" id="prodRel">
+      
     </div>
+
+    </div>
+   
   </main>
   <footer class="text-muted">
     <div class="container">

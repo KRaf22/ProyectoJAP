@@ -39,3 +39,37 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+function despegable(usuario){
+  let menuDespegable= `
+              <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ${usuario}
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/WorkSpace/cart.html"">Mi Carrito</a></li>
+                  <li><a class="dropdown-item" href="/WorkSpace/my-profile.html">Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="/WorkSpace/login.html" id="cerrar-sesion">Cerrar sesión</a></li>
+                </ul>
+              </div>`
+
+document.getElementById('despegable').innerHTML=menuDespegable;
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+  let correo=sessionStorage.getItem('email');
+
+    if(correo===null){
+
+        alert('Debe iniciar sesión');
+        location.href='login.html'
+    } else {
+        despegable(correo);
+    }
+    document.getElementById('cerrar-sesion').addEventListener('click', ()=> {
+        alert('Cierro sesión');
+        sessionStorage.clear();
+
+    })
+})

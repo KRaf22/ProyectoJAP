@@ -199,6 +199,26 @@ a.custom-card:hover {
   margin-left: 32%;
   margin-top: 1%;
 }
-#cerrar-sesion{
+/*#cerrar-sesion{
   display: none;
+}*/
+#mostrarUsuario {
+  color: white;
+}
+#comentar{
+  margin-top: 20px;
+}
+#comentario{
+  width: 600px;
+  border-radius: 1%;
+}
+select {
+  width: 170px;
+  height: 35px;
+}
+#carrusel{
+  width: 600px;
+}
+#contenedor{
+margin-top: 30px;
 }
