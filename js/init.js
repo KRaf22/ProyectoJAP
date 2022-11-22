@@ -40,20 +40,21 @@ let getJSONData = function(url){
     });
 }
 
-function despegable(usuario){
-  let menuDespegable= `
+function desplegable(usuario){
+  let menuDesplegable= `
               <div class="btn-group">
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   ${usuario}
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/WorkSpace/cart.html"">Mi Carrito</a></li>
-                  <li><a class="dropdown-item" href="/WorkSpace/my-profile.html">Mi Perfil</a></li>
-                  <li><a class="dropdown-item" href="/WorkSpace/login.html" id="cerrar-sesion">Cerrar sesión</a></li>
+                  <li><a class="dropdown-item" href="cart.html"">Mi Carrito</a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
                 </ul>
-              </div>`
+              </div>
+              `
 
-document.getElementById('despegable').innerHTML=menuDespegable;
+document.getElementById('desplegable').innerHTML=menuDesplegable;
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -65,11 +66,12 @@ document.addEventListener('DOMContentLoaded',()=>{
         alert('Debe iniciar sesión');
         location.href='login.html'
     } else {
-        despegable(correo);
+        desplegable(correo);
     }
     document.getElementById('cerrar-sesion').addEventListener('click', ()=> {
         alert('Cierro sesión');
         sessionStorage.clear();
+        localStorage.clear();
 
     })
 })

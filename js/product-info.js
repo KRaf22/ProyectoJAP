@@ -25,7 +25,7 @@ function mostrarProducto(){
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+            </div> 
             `
     document.getElementById('carrusel').innerHTML=agregarHTML;
 
@@ -169,6 +169,24 @@ function setCatID(id) {
     location.href = "product-info.html";
 }
 
+function agregarProductoAlCarrito(){
+    let productoCarrito={};
+    productoCarrito.id=producto.id;
+    productoCarrito.name=producto.name;
+    productoCarrito.count=1;
+    productoCarrito.unitCost=producto.cost;
+    productoCarrito.currency=producto.currency;
+    productoCarrito.image=producto.images[0];
+    articulosCarrito.push(productoCarrito);
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Agregado al carrito correctamente',
+        html: '<p>Aprete <a href="cart.html">aquí</a> para ver el carrito</p>',
+      })
+}
+
 document.addEventListener('DOMContentLoaded',()=> {
     id=localStorage.getItem('idProducto');
 
@@ -194,6 +212,15 @@ document.addEventListener('DOMContentLoaded',()=> {
     document.getElementById('enviarComentario').addEventListener('click',()=>{
         añadirComentario();
     })
+    document.getElementById('comprar').addEventListener('click',()=>{
+        agregarProductoAlCarrito();
+
+    })
+
+    articulosCarrito=JSON.parse(localStorage.getItem('carrito'));
+    if (articulosCarrito==null){
+        articulosCarrito=[];
+    }
 
 
 

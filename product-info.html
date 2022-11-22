@@ -29,7 +29,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
-            <li class="d-flex nav-item" id="despegable">
+            <li class="d-flex nav-item" id="desplegable">
               
             </li>
           </li>
@@ -41,7 +41,10 @@
   </nav>
   <main>
     <div id="contenedor" class="container">
-      <h2 id="nombreProducto"></h1> <br>
+      <div class="d-flex w-75">
+        <h2 id="nombreProducto"></h1>
+        <button id="comprar" class="btn btn-success ms-auto">Comprar</button>
+        </div> <br>
       <hr>
       <h5><strong>Precio</strong></h5>
       <p id="precio"></p>
@@ -110,6 +113,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

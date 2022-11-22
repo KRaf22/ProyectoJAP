@@ -26,7 +26,7 @@
   </style>
 </head>
 
-<body>
+<body class="bg-light">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -44,7 +44,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="d-flex nav-item" id="despegable">
+          <li class="d-flex nav-item" id="desplegable">
             
           </li>
           <li class="nav-item">
@@ -54,13 +54,48 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container rounded bg-white mt-5">
+      <div class="row">
+          <div class="col-md-4 border-right">
+              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" id="profilePhoto"></div>
+          </div>
+          <div class="col-md-6 border-right">
+              <div class="p-3 py-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h3 class="text-right">Perfil</h3>
+                  </div>
+                  <form action="#" method="post" class="needs-validation" id="formPerfil" novalidate>
+                  <div class="row mt-2">
+                      <div class="col-md-6">
+                        <label class="labels">Nombre*</label><input type="text" class="form-control mb-3" id="nombre" required>
+                        <div class="invalid-feedback">
+                          Ingrese un nombre
+                         </div>
+                        <label class="labels">Primer Apellido*</label><input type="text" class="form-control mb-3" id="primerApellido" required>
+                        <div class="invalid-feedback">
+                          Ingrese un apellido
+                         </div>
+                        <label class="labels">E-mail*</label><input type="text" class="form-control mb-3" id="email" required disabled>
+                        <label class="labels">Imagén de Perfil</label><input type="file" class="form-control mb-3" id="fotoPerfil" accept="image/png, image/jpeg, image/jpg" >
+                      </div>  
+                      <div class="col-md-6">
+                        <label class="labels">Segundo Nombre</label><input type="text" class="form-control mb-3" id="segNombre">
+                        <label class="labels">Segundo Apellido</label><input type="text" class="form-control mb-3" id="segApellido">
+                        <label class="labels">Teléfono de Contacto</label><input type="tel" class="form-control mb-3" id="telContacto">
+                      </div>
+                   </div>
+                   
+                   <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit" id="guardarPerfil">Guardar cambios</button></div>
+                  </form>
+                </div>
+                  
+            </div>
+                
+          </div>
       </div>
-    </div>
+  </div>
   </main>
-  <footer class="text-muted">
+  <footer class="text-muted bg-dark">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
@@ -73,6 +108,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

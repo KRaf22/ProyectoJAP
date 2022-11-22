@@ -29,8 +29,8 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="d-flex nav-item" id="despegable">
-            
+          <li class="d-flex nav-item" id="desplegable">
+
           </li>
           <li class="nav-item">
           </li>
@@ -39,11 +39,140 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="text-center p-4">
+      <h2>Carrito de Compras</h2>
     </div>
+    <div class="container">
+      <h4>Articulos a comprar</h4>
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th colspan="2"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="productos_a_comprar">
+
+        </tbody>
+      </table>
+      <br>
+      <h4>Tipo de envío</h4><br>
+      <input type="radio" name="envio" id="envioPremium" value="0.15"><span class="envio">Premium 2 a 5 dias
+        (15%)</span><br>
+      <input type="radio" name="envio" id="envioExpress" value="0.07"><span class="envio">Express 5 a 8 dias
+        (7%)</span><br>
+      <input type="radio" name="envio" id="envioStandard" value="0.05" checked><span class="envio">Standard 12 a 15 dias
+        (5%)</span><br><br>
+
+      <h4 class="mb-4">Dirección de envío</h4>
+
+      <form action="#" method="post" class="needs-validation" id="formCarrito" novalidate>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="calle" class="form-label">Calle</label>
+          <input type="text" name="calle" id="calle" class="inputLarge form-control" placeholder="Calle" required>
+          <div class="invalid-feedback">
+            Ingrese un nombre
+           </div>
+        </div>
+        <div class="col-md-4">
+          <label for="numero" class="form-label">Número</label>
+          <input type="text" name="numero" id="numero" placeholder="Número" class="form-control" required>
+          <div class="invalid-feedback">
+            Ingrese un número
+           </div>
+        </div>
+      </div>
+
+      <br>
+      <label for="Esquina" class="form-label">Esquina</label>
+      <input type="text" name="Esquina" id="Esquina" class="inputLarge form-control" placeholder="Esquina" required>
+      <div class="invalid-feedback">
+        Ingrese una esquina
+       </div>
+      <hr class="mt-4" id="grosor">
+
+      <h3 class="mb-3">Costos</h3>
+      <div class="border rounded-3 cont">
+        <ul class="list-group" id="listaComentarios">
+          <li class="list-group-item ">Subtotal<span id="subtotal" class="float-end"></span><br><span
+              class="fw-light">Costo unitario del producto por cantidad</span></li>
+          <li class="list-group-item">Costo de Envio <span id="envio" class="float-end"></span><br><span
+              class="fw-light">Según el tipo de envío</span></li>
+          <li class="list-group-item">Total ($)<span class="fw-bold float-end" id="total"></span></li>
+
+        </ul>
+      </div>
+      
+      <hr class="mt-5 mb-4" id="grosor2">
+      <h3 class="mb-3">Forma de Pago</h3>
+      <span id="metodoPago">No ha seleccionado</span>
+      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalPago">Seleccionar</button>
+      <p id="seleccionarPago"></p>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary mt-4" type="submit" id="finalizarCompra">Finalizar compra</button>
+      </div>
+
+      <div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Forma de Pago</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <input type="radio" name="pago" id="credito"><span class="formaPago">Tarjeta de Credito</span>
+                <hr>
+  
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="numTarjeta" class="form-label">Numero de Tarjeta</label>
+                    <input type="text" name="numTarjeta" id="numTarjeta" class="form-control" required>
+                  </div>
+  
+                  <div class="col-md-4 ms-2">
+                    <label for="codigoSeg" class="form-label">Código de seg.</label>
+                    <input type="text" name="codigoSeg" id="codigoSeg" class="form-control" required>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="venc" class="form-label">Vencimiento (MM/AA)</label>
+                    <input type="text" name="venc" id="venc" class="form-control" required>
+                  </div>
+                </div>
+                <input type="radio" name="pago" id="bancaria" class="mt-4"><span class="formaPago">Transferencia Bancaria</span>
+                <hr>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="numCuenta" class="form-label">Número de cuenta</label>
+                    <input type="text" name="numCuenta" id="numCuenta" class="form-control" required disabled>
+                  </div>
+                </div>
+              </div>
+            </div> 
+  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    
+    
+
+
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -66,6 +195,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
